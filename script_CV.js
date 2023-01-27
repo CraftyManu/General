@@ -12,13 +12,44 @@ function init () {
   document.getElementById('provincia').addEventListener('focusout', localStorage_provincia);
   document.getElementById('codigoPostal').addEventListener('focusout', localStorage_codigoPostal);
   document.getElementById('motivo').addEventListener('focusout', localStorage_motivoConsulta);
+
+// cambio de temas/colores:
+
+/* Seleccionar todos las opciones */
+const cambiarColores = document.querySelector('.cambioColor');
+const botonesTema = cambiarColores.querySelectorAll('button');
+
+/* asociar la función manejarSeleccionTema al botón sobre el cual se hace click */
+botonesTema.forEach((button) => {
+  button.addEventListener('click', manejarSeleccionTema);
+  });
+
+  const temaGuardado = localStorage.getItem('temaSeleccionado');
+  const temaPorDefecto = "uno";
+  botonAnterior = document.querySelector('[data-opcion][aria-pressed="true"]');
+
+  if (temaGuardado && temaGuardado !== temaPorDefecto) {
+    botonAnterior.setAttribute('aria-pressed', false);
+    document.querySelector(`[data-opcion="${temaGuardado}"]`).setAttribute('aria-pressed', true);
+    document.documentElement.setAttribute('data-opcion', temaGuardado);
+  }
+  console.log('tema guardado en localStorage: ' + temaGuardado);
+} /* fin funcion init */
+
+// función para seleccionar los colores:
+function manejarSeleccionTema (event) {
+  console.log('Cambiando los colores del tema:');
+  console.log('Botón seleccionado', event.target);
+  const tema = event.target.getAttribute('data-opcion');
+  console.log('Opción seleccionada: ' + tema);
+  document.documentElement.setAttribute('data-opcion',tema);
+  botonAnterior.setAttribute('aria-pressed', false);
+  event.target.setAttribute('aria-presed' , 'true');
+  /* guardando el tipo de tema seleccionado en localStorage */
+  localStorage.temaSeleccionado = tema;    
 }
 
-function mostrarPosicionUsuario (lat, long) {
-  const map = L.map('map').setView([lat, long], 13); // las coordenadas de la ubicacion del usuario.
-  var marker = L.marker([lat, long]).addTo(map);
-}
- 
+// funciones para crear una persona random: 
 function fetchData (url) { //traer los datos del CV de la persona de la API (de la url definida como constante en la función init) y mostrarlos en el HTML.
   console.log('start fetch');
   fetch(url).then(response => {
@@ -79,19 +110,19 @@ function fetchData (url) { //traer los datos del CV de la persona de la API (de 
   })
   } 
 
-  function crearTitulo () {
-    // arrays para randomizar el título universitario del CV de la persona:
-    const preTitulo = ["Ing.", "Lic.", "Técnico"]
-    const titulo = ["en Informática", "Agronomo", "en Sistemas", "Industrial", "en Desarrollo", "en Biotecnología", "Electrónico"]
-    // mostrar el título en el CV:
-    var preIndex = Math.round(Math.random()*(preTitulo.length -1));
-    var pre = preTitulo[preIndex];
-    console.log('Pre titulo: ' + pre);
-    var tituloIndex = Math.round(Math.random()*(titulo.length -1));
-    var Titulo = titulo[tituloIndex];
-    console.log('Titulo: ' + Titulo);
-    document.querySelector('#titulo').innerHTML = pre + " " + Titulo;
-  }
+function crearTitulo () {
+  // arrays para randomizar el título universitario del CV de la persona:
+  const preTitulo = ["Ing.", "Lic.", "Técnico"]
+  const titulo = ["en Informática", "Agronomo", "en Sistemas", "Industrial", "en Desarrollo", "en Biotecnología", "Electrónico"]
+  // mostrar el título en el CV:
+  var preIndex = Math.round(Math.random()*(preTitulo.length -1));
+  var pre = preTitulo[preIndex];
+  console.log('Pre titulo: ' + pre);
+  var tituloIndex = Math.round(Math.random()*(titulo.length -1));
+  var Titulo = titulo[tituloIndex];
+  console.log('Titulo: ' + Titulo);
+  document.querySelector('#titulo').innerHTML = pre + " " + Titulo;
+}
 
 // funciones para guardar los datos del formulario en localStorage:
 function localStorage_nombre() {
@@ -195,14 +226,10 @@ function geolocalizacionCV (latitudCV, longitudCV) {
    marker.bindPopup("<b>Advertencia!</b><br>Las dirección de contacto puede no coincidir con lo que ve en el mapa.").openPopup();
 } 
 
-// --- explicaciones de los botones:
 
-function explanation () {
-  mouseover
 
-}
 
-// --- elegir entre distintos temas:
 
+  
 
 

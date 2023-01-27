@@ -1,46 +1,90 @@
 /* CSS HEX */
-:root {
-    --color1: #0d1b2a;
-    --color2: #197278;
-    --color3: #edddd4;
-    --color4: #c44536;
-    --color5: #772e25;  
-}
-
 :root,  
-    [data-selected-theme="uno"] {
+    [data-opcion = "uno"] {
     --color1: #0d1b2a;
     --color2: #197278;
     --color3: #edddd4;
     --color4: #c44536;
     --color5: #772e25;  
 }
-
-[data-selected-theme="dos"] {
+    [data-opcion = "dos"] {
     --color1: #283618;
     --color2: #606c38;
     --color3: #fefae0;
     --color4: #dda15e;
     --color5: #bc6c25;  
 }
-
-[data-selected-theme="tres"] {
+    [data-opcion = "tres"] {
     --color1: #0d1b2a;
     --color2: #ffb703;
     --color3: #8ecae6;
     --color4: #fb8500;
     --color5: #219ebc;  
 }
-
-[data-selected-theme="cuatro"] {
+    [data-opcion = "cuatro"] {
     --color1: #0d1b2a;
     --color2: #1b263b;
     --color3: #e0e1dd;
     --color4: #778da9;
     --color5: #415a77;  
 }
+[data-opcion = "cinco"] {
+    --color1: #3d405b;
+    --color2: #81b29a;
+    --color3: #f4f1de;
+    --color4: #f2cc8f;
+    --color5: #e07a5f;  
+}
+[data-opcion = "seis"] {
+    --color1: #212529;
+    --color2: #6c757d;
+    --color3: #f8f9fa;
+    --color4: #adb5bd;
+    --color5: #495057;  
+}
+[data-opcion = "seis"] {
+    --color1: #132a13;
+    --color2: #4f772d;
+    --color3: #ecf39e;
+    --color4: #90a955;
+    --color5: #31572c;  
+}
+[data-opcion = "siete"] {
+    --color1: #463f3a;
+    --color2: #bcb8b1;
+    --color3: #f4f3ee;
+    --color4: #e0afa0;
+    --color5: #8a817c;  
+}
+[data-opcion = "ocho"] {
+    --color1: #5f0f40;
+    --color2: #0f4c5c;
+    --color3: #fb8b24;
+    --color4: #e36414;
+    --color5: #9a031e;  
+}
+[data-opcion = "nueve"] {
+    --color1: #0d574f;
+    --color2: #ffa69e;
+    --color3: #ddfff7;
+    --color4: #aa4465;
+    --color5: #861657;  
+}
+[data-opcion = "diez"] {
+    --color1: #d68c45;
+    --color2: #ffc9b9;
+    --color3: #fefee3;
+    --color4: #4c956c;
+    --color5: #2c6e49;  
+}
 
 
+
+/* button[aria-pressed="true"] { 
+    background: var(--color1);
+    color: var(--color3);
+    border: 3px solid var(--color5);
+  } */
 
 
 /* inicio de estilos generales */
@@ -53,33 +97,33 @@
 }
 
 .themebtn {
-    border-radius: 0.375rem;
+    border-radius: 50%;
+    min-width: 2rem;
     font-size: large;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0.3rem;
+    color: var(--color3);
+    background-color: var(--color1);
+    border-color: var(--color4);
 }
 
-#theme1btn {
-    border: 2px solid #772e25;
-    background-color: #edddd4;
-    color: #0d1b2a;;
-}
-#theme2btn {
-    border: 2px solid #bc6c25;
-    background-color: #fefae0;
-    color: #283618;
-}
-#theme3btn {
-    border: 2px solid #219ebc;
-    background-color: #8ecae6;
-    color: #0d1b2a;
-}
-#theme4btn {
-    border: 2px solid #415a77;
-    background-color: #e0e1dd;
-    color: #0d1b2a;
+.themebtn:hover {
+    color: var(--color1);
+    background-color: var(--color3);
 }
 
+.cambioColor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+}
+
+.cambioColor p {
+    display: inline; 
+    color: var(--color3);
+    font-weight: 500;
+    margin: auto;
+}
 
 h1, h2, h3, h4 {
     font-family: 'Bree Serif', serif;
@@ -161,7 +205,7 @@ footer  {
     background-color: var(--color1);
     /* min-width: 160px; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-     padding: 12px 16px; 
+    padding: 12px 16px; 
     z-index: 1;
     /* margin-left: 2.5rem; */
 }
@@ -170,8 +214,6 @@ footer  {
     color: var(--color3);
     text-decoration-line: none;
 }
-
-
 
 #dropdown:hover .contenido-dropdown {
     display: block;
@@ -314,7 +356,7 @@ span {
 
 /* Smartphone */
 @media screen and (max-width: 575px) {
-    #logo {
+    #logo, .contenido-dropdown, .cambioColor {
         display: none;
     }
     #divFoto {
@@ -354,11 +396,14 @@ span {
         width: 100vw;
         border-radius: 0;
         border: none;
-        
     }
-    
+    #dropdown:hover .contenido-dropdown {
+        display:grid;
+        width: 100vw;
+        text-align: center; 
+    }
+   
 }
-
 
 
 /* Tablet */
