@@ -1,16 +1,85 @@
+/* CSS HEX */
 :root {
-    /* CSS HEX */
     --color1: #0d1b2a;
     --color2: #197278;
     --color3: #edddd4;
     --color4: #c44536;
-    --color5: #772e25;    
+    --color5: #772e25;  
 }
+
+:root,  
+    [data-selected-theme="uno"] {
+    --color1: #0d1b2a;
+    --color2: #197278;
+    --color3: #edddd4;
+    --color4: #c44536;
+    --color5: #772e25;  
+}
+
+[data-selected-theme="dos"] {
+    --color1: #283618;
+    --color2: #606c38;
+    --color3: #fefae0;
+    --color4: #dda15e;
+    --color5: #bc6c25;  
+}
+
+[data-selected-theme="tres"] {
+    --color1: #0d1b2a;
+    --color2: #ffb703;
+    --color3: #8ecae6;
+    --color4: #fb8500;
+    --color5: #219ebc;  
+}
+
+[data-selected-theme="cuatro"] {
+    --color1: #0d1b2a;
+    --color2: #1b263b;
+    --color3: #e0e1dd;
+    --color4: #778da9;
+    --color5: #415a77;  
+}
+
+
+
 
 /* inicio de estilos generales */
 * {
     box-sizing: border-box;
 }
+
+#theme {
+    display: inline-flex;
+}
+
+.themebtn {
+    border-radius: 0.375rem;
+    font-size: large;
+    font-weight: 500;
+    margin: 0.3rem;
+}
+
+#theme1btn {
+    border: 2px solid #772e25;
+    background-color: #edddd4;
+    color: #0d1b2a;;
+}
+#theme2btn {
+    border: 2px solid #bc6c25;
+    background-color: #fefae0;
+    color: #283618;
+}
+#theme3btn {
+    border: 2px solid #219ebc;
+    background-color: #8ecae6;
+    color: #0d1b2a;
+}
+#theme4btn {
+    border: 2px solid #415a77;
+    background-color: #e0e1dd;
+    color: #0d1b2a;
+}
+
 
 h1, h2, h3, h4 {
     font-family: 'Bree Serif', serif;

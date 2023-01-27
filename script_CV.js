@@ -195,4 +195,14 @@ function geolocalizacionCV (latitudCV, longitudCV) {
    marker.bindPopup("<b>Advertencia!</b><br>Las dirección de contacto puede no coincidir con lo que ve en el mapa.").openPopup();
 } 
 
+// --- explicaciones de los botones:
+
+function explanation () {
+  mouseover
+
+}
+
+// --- elegir entre distintos temas:
+
+
 
