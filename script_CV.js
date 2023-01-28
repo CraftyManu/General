@@ -16,7 +16,7 @@ function init () {
 // cambio de temas/colores:
 
 /* Seleccionar todos las opciones */
-const cambiarColores = document.querySelector('.cambioColor');
+const cambiarColores = document.querySelector('#cambioColor');
 const botonesTema = cambiarColores.querySelectorAll('button');
 
 /* asociar la función manejarSeleccionTema al botón sobre el cual se hace click */
