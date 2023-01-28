@@ -34,7 +34,31 @@ botonesTema.forEach((button) => {
     document.documentElement.setAttribute('data-opcion', temaGuardado);
   }
   console.log('tema guardado en localStorage: ' + temaGuardado);
+// responsive design
+let w = window.innerWidth;
+
+console.log('original window width: ' + w + "px")
+// let colors_dropdown = document.getElementById('colors-dropdown')
+let colorbtn = document.getElementById('colorbtn');
+window.addEventListener("resize", function(){
+  console.log('the window has been resized');
+  let w = window.innerWidth;
+  cambiarEstilo (w, colorbtn);
+});
+
 } /* fin funcion init */
+
+// changes according to window size:
+function cambiarEstilo (w, colorbtn) {
+  if (w >= 980) {
+    colorbtn.innerHTML = 'Colores: ';
+  } else {
+    console.log('viewport width: ' + w + 'px => medium or small screen');
+    colorbtn.innerHTML = 'Tema';
+  }
+}
+
+
 
 // función para seleccionar los colores:
 function manejarSeleccionTema (event) {

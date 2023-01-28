@@ -186,6 +186,27 @@ footer  {
     display: flex;
     flex-wrap: nowrap;
 }
+#obj-name {
+    animation-name: Colores;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    animation-delay: 2s;
+}
+
+@keyframes Colores {
+0% {
+    color: var(--color3);
+}
+25% {
+    color: var(--color2);
+}
+50% {
+    color: var(--color4);
+}
+100% {
+    color: var(--color3);
+}
+}
 /* fin de estilos generales */
 
 /* inicio del menu: */
@@ -238,6 +259,10 @@ section {
 #p-img {
     width: 100%;
     max-width: 300px;
+    transition: width 1.5s;
+}
+#p-img:hover {
+    width: 350px;
 }
 
 #nombrePersona {
@@ -323,8 +348,7 @@ form .row {
 .boton {
     border-radius: 0.375rem;
     border: 3px solid var(--color5);
-    background-color: var(--color4);
-    /* background-image: radial-gradient(var(--color3), var(--color4)); */
+    background-image: radial-gradient(var(--color3), var(--color4)); 
     color: var(--color1);
     text-shadow: -0.1px -0.1px 3px var(--color3), 0.1px 0.1px 3px var(--color3);
     font-size:larger;
@@ -333,8 +357,9 @@ form .row {
 }
 
 .boton:hover {
-    background-color: var(--color5);
+    background-image: radial-gradient(var(--color1), var(--color5)); 
     color: var(--color3);
+    border: 3px solid var(--color4);
     text-shadow: none;
 }
 
@@ -465,7 +490,22 @@ span {
 
 
 /* Desktop */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 980px)  {
+    #colors-dropdown {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        right: 0;
+    }
+    #cambioColor {
+        display: flex;
+        justify-content: flex-end;
+    }    
+}
+
+
+
+/* Bigest screen */
+@media screen and (min-width: 769px)  {
     #persona {
         display: flex;
         text-align: center;
@@ -476,6 +516,7 @@ span {
     #nombrePersona {
         width: 75vw;
     }
+    
     #CV {
         display: flex;
         flex-direction: row-reverse;
@@ -491,27 +532,50 @@ span {
         text-align: left;
         margin-bottom: 1rem;
     }
-    #colors-dropdown {
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        right: 0;
-    }
-    .colorsDiv {
-        display: inline; 
-    }
     #menu-dropdown {
         max-width: 160px;
         border-bottom-right-radius: 1rem;
     }
+    .colorsDiv {
+        display: inline; 
+    }
+}
+
+@media screen and (min-width: 981px) {
     #cambioColor {
         display: flex;
+        flex-wrap: nowrap;
         justify-content: flex-end;
+    }
+    #colors-dropdown {
+        display: flex;
+        flex-wrap: nowrap;
+        position: static;
+        background-color: var(--color5);
+        color: var(--color3);
+        height: 3rem; /* revisar */
+        margin: 0;
+        padding: 0;
+    }
+    #cambioColor:hover .contenido-dropdown {
+        display: flex;
+    }
+    #colorbtn {
+        border: 0;
+        color: var(--color3);
+        background-color: var(--color5);
+    }
+
+    #colorbtn:hover {
+        color: var(--color2);
+        background-color: var(--color5);
     }
 }
 
 
 /* Fin de media query */
 
+/* mapa: */
 .map {
     min-height: 250px;
     max-height: 100vh;
@@ -530,7 +594,4 @@ span {
     background-color: var(--color5);
     color: var(--color3);
 
-}
-
-
-
+} 
