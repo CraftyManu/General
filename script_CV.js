@@ -46,6 +46,13 @@ window.addEventListener("resize", function(){
   cambiarEstilo (w, colorbtn);
 });
 
+// form submit:
+document.querySelector('form').onsubmit = function() {
+  alert(`Hola ${document.getElementById('nombre').value}. Gracias por comunicarse con nosotros. Un representante pronto se pondrá en contacto con usted.`)
+  // evitar que al enviar el formulario el browser cargue nuevamente la página:
+  return false
+}
+
 } /* fin funcion init */
 
 // changes according to window size:
