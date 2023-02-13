@@ -1,3 +1,5 @@
+"use strict"; 
+
 window.onload = init;
 
 function init () {
@@ -26,7 +28,7 @@ botonesTema.forEach((button) => {
 
   const temaGuardado = localStorage.getItem('temaSeleccionado');
   const temaPorDefecto = "uno";
-  botonAnterior = document.querySelector('[data-opcion][aria-pressed="true"]');
+  let botonAnterior = document.querySelector('[data-opcion][aria-pressed="true"]');
 
   if (temaGuardado && temaGuardado !== temaPorDefecto) {
     botonAnterior.setAttribute('aria-pressed', false);
@@ -88,7 +90,8 @@ function fetchData (url) { //traer los datos del CV de la persona de la API (de 
     console.log(response);
     if (!response.ok) //si el estatus del pedido no es "ok: true", entonces dar un mensaje de error.
       throw Error('ERROR')
-    return data = response.json();
+    let data = response.json();
+    return data 
   }).then(data => {
       console.log('data: ');
       console.log(data);
