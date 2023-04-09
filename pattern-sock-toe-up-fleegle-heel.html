@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="sock knitting pattern generator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="pattern-styles.css"/>
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Caveat">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Indie Flower">
+    <title>Toe-up Sock Pattern</title>
+</head>
+<body>
+    <div class="light-mode">
+    <h1 class="light-mode">Toe Up (Fleegle Heel) Sock Pattern Generator</h1>
+    <div class="topNav"></div>
+    <div class="row">
+        <div class="column" id="firstColumn">
+    <section role="form">
+    <form action="" method="get"> <!--action="where to send the data to"-->
+        <fieldset class="CMorI">
+            <legend>Choose between cm and inches</legend>
+            <section role="region" aria-labelledby="measuring-system" id="topSection">
+            <div class="metricVsImperial">
+                <label for="measuring-system">
+                    <select name="measuring-system" id="measuring-system-selection">
+                        <option value="null"> (select one)</option>
+                        <option value="cm">cm</option>
+                        <option value="inches">inches</option>
+                </label>
+                    </select>
+            </div>   
+            <!-- Rounded switch -->
+            <div id="light-switchDiv">
+                <p id="light" class="light-selected">Light Mode</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p id="dark">Dark Mode</p>
+            </div>
+                <!-- <button id="darkLightModeButton">Dark Mode</button>  -->
+            </section>
+        </fieldset>
+
+<fieldset>
+    <legend> Gauge Information</legend>
+    <section role="region" aria-labelledby="gauge-information">
+        <!-- <h2>Gauge Information</h2> -->
+        <div class="gaugeInfoDiv">
+            <label for="gaugeSize" id="gaugeSizeLabel">
+                <input type="number" name="gaugeSwatchSize" id="gaugeSize" class="gaugeInfoInput" min="1" placeholder="swatch size" value="0" required>
+                <!-- How many "unit cm or inches" does your gauge swatch have? -->
+            </label>
+        </div>
+        <div class="gaugeInfoDiv">
+            <label for="gaugeSts" id="gaugeStsLabel">
+                <input type="number" name="gaugeSts" id="gaugeSts" class="gaugeInfoInput" min="1" placeholder="sts" value="0" required>
+                <!-- How many sts in (10cm?) (from your gauge swatch) -->
+            </label>
+        </div>
+        <div class="gaugeInfoDiv">
+            <label for="gaugeRows" id="gaugeRowsLabel">
+                <input type="number" name="gaugeRows" id="gaugeRows" class="gaugeInfoInput" min="1" placeholder="rows" value="0" required>
+                <!-- How many rows in (10cm?) (from your gauge swatch) -->
+            </label>
+        </div>
+    </section>
+</fieldset>
+
+       <fieldset>
+        <legend>Your Foot Measurements</legend>
+        <section role="region" aria-labelledby="foot-measurements">
+            
+            <div class="footMeasurementsRow">
+                <div class="footMeasurementsColumn">
+                    
+                <div class="footMeasurements">
+                    <!-- <h2>Your Foot Measurements</h2> -->
+                    <label for="footLength" id="footLengthLabel">
+                        <input type="number" name="footLength" id="footLength" class="footInfoInput" min="1" placeholder="foot length" value="0" required> The LENGTH of your foot
+                    </label>
+                </div>
+                <div class="footMeasurements">
+                    <label for="footWidth" id="footWidthLabel">
+                        <input type="number" name="footWidth" id="footWidth" class="footInfoInput" min="1" placeholder="foot width" value="0" required> The WIDTH of your foot
+                    </label>
+                </div>
+                <div class="notes">
+                    <label for="userNotes" id="userNotesLabel">Personal Notes: </label>
+                        <textarea name="userNotes" id="userNotes" class="notes" rows="4" cols="30" placeholder="If you wish to add some personal notes for your own reference do it here."> </textarea>
+                </div>
+            </div>
+                <div class="footMeasurementsColumn images">
+                <div class="footMeasurements footImages">
+                    <img class="footMeasurementsImage" id="footMeasurementsImage1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrYgmAsMabQd_M0EC3-oxUhGIEkxx3p9kJhg&usqp=CAU" alt="How to measure your foot">  
+                    <div class="container">
+                        <img class="footMeasurementsImage" id="footMeasurementsImage2" src="https://cdn.shopify.com/s/files/1/1693/9553/files/foot2_large.png?v=1489763719" alt="how to measure foot length">
+                        <div class="overlay">
+                            <div class="img-text">Length</div>
+                          </div>
+                    </div>
+                    <div class="container">
+                        <img class="footMeasurementsImage" id="footMeasurementsImage3" src="https://www.sandpipershoes.com/pub/media/foot-measurement-guide-322.png" alt="how to measure foot width">
+                        <div class="overlay">
+                            <div class="img-text">Width</div>
+                          </div>
+                    </div>
+                </div>  
+            </div> 
+            </div>
+        </section>
+       </fieldset>
+       <div id="buttonsDiv">
+            <section role="button" aria-labelledby="submit-button">
+                <button type="submit" id="submitButton" value="Submit">Generate Pattern</button>
+                <p id="buttonInstructions">Submit the form to generate a customized pattern for your personal measurements (don't forget to fill all the information).</p>
+            </section>
+            <section role="button" aria-labelledby="reset-button">
+                <button type="reset" id="resetButton" value="Reset">Reset</button>
+            </section>
+        </div>
+    </form>
+</section>
+</div>
+<button id="topButton" title="Go to top">Go to Top</button>
+<div class="column" id="secondColumn">
+
+<section role="document"><!--here will go the pattern-->
+<h2 class="pattern-title">Toe-Up Sock Pattern</h2> 
+
+    <div class="sockPattern">
+        <h3 id="h3-patternMeasurements"></h3>
+        <p class="pattern" id="patternMeasurements"><!--Here will be the written measurements</p>-->
+    </div>
+
+    <div class="sockPattern">
+        <h3 id="h3-patternNotes"></h3>
+        <p class="pattern" id="patternNotes">Introduce your gauge and foot measurements. Then click on the "Generate Pattern" button to get a fully personalized pattern.<!--Here will be the pattern notes</p>-->
+    </div>
+
+    <div class="sockPattern">
+        <h3 id="h3-patternInstuctions"></h3>
+        <p class="pattern" id="patternInstructions"><!--Here will be the written pattern</p>-->
+    </div>
+</section>
+</div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</div>
+
+</div>
+<footer>
+    For more information visit <a href="https://mimostejidosartesanales.wordpress.com/">https://mimostejidosartesanales.wordpress.com/</a>  or contact <b>mimostejidos@gmail.com</b>.
+</footer>
+
+</html>
